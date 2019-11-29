@@ -34,5 +34,6 @@ cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7
 cfg.DATASETS.TEST = ("valSet", )
 predictor = DefaultPredictor(cfg)
+output = predictor(img)
 
 utils.draw_predImg_dicts(utils.get_textImg_dicts(images, valPath), 10, textImg_metadata, predictor)
